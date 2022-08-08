@@ -1,0 +1,49 @@
+:host {
+	display: block;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+
+	@media (max-width: 375px) {
+		&__nav {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 100%;
+		}
+	}
+
+	@media (min-width: 376px) {
+		&__nav {
+			margin-left: auto;
+		}
+	}
+
+	@media (max-width: 768) {
+		&__logo {
+			margin: 24px 0px 0px 24px;
+		}
+	}
+
+	@media (min-width: 769px) {
+		padding-top: 40px;
+
+		&__logo {
+			margin-left: 55px;
+		}
+	}
+
+	@media (min-width: 1025px) {
+		&::after {
+			content: '';
+			position: absolute;
+			left: 167px;
+
+			background-color: rgba(var(--white-r), 0.25);
+			width: 473px;
+			height: 1px;
+		}
+	}
+}

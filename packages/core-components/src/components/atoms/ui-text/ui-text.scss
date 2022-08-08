@@ -1,0 +1,64 @@
+:host {
+	display: block;
+}
+
+$sizes: (
+	'h1' 150px 150px 'ff1',
+	'h2' 100px 100px 'ff1',
+	'h3' 56px 56px 'ff1',
+	'h4' 32px 32px 'ff1',
+	'h5' 28px 28px 'ff2',
+	'sh1' 28px 28px 'ff1',
+	'sh2' 14px 14px 'ff2',
+	'nav' 16px 14px 'ff2' 2.7px,
+	'p' 18px 18px 'ff2'
+);
+
+$types: block, inline;
+
+$colors: ('dark' --dark-blue-h, 'purple' --purple-light-h, 'white' --white-h);
+
+.text {
+	color: var(--dark-blue-h);
+	overflow-wrap: anywhere;
+
+	@each $name, $size1, $size2, $font, $letter in $sizes {
+		&--size-#{$name} {
+			@media (max-width: 768px) {
+				font-size: $size2;
+			}
+
+			@media (min-width: 769px) {
+				font-size: $size1;
+			}
+
+			@if $font == 'ff1' {
+				font-family: 'Bellefair', serif;
+			}
+
+			@if $font == 'ff2' {
+				font-family: 'Barlow Condensed', sans-serif;
+			}
+
+			@if $letter {
+				letter-spacing: $letter;
+			}
+		}
+	}
+
+	@each $type in $types {
+		&--type-#{$type} {
+			display: $type;
+		}
+	}
+
+	&--weight-bold {
+		font-weight: bold;
+	}
+
+	@each $color, $value in $colors {
+		&--color-#{$color} {
+			color: var($value);
+		}
+	}
+}

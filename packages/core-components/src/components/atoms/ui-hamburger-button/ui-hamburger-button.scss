@@ -1,0 +1,56 @@
+:host {
+	display: inline-block;
+}
+
+.hamburger-button {
+	position: relative;
+
+	width: 24px;
+	height: 21px;
+
+	border: 0;
+	outline: none;
+	margin: 0;
+	padding: 0;
+
+	background: transparent;
+}
+
+.one,
+.two,
+.three {
+	position: absolute;
+	width: 100%;
+	height: 3px;
+
+	background-color: var(--purple-light-h);
+
+	transition: all .5s ease-in-out;
+}
+
+.one {
+	top: 0px;
+	transform-origin: 1px 5px;
+
+	&--active {
+		transform: rotate(45deg);
+	}
+}
+
+.two {
+	top: 50%;
+	transform: translateY(-50%);
+
+	&--active {
+		opacity: 0;
+	}
+}
+
+.three {
+	bottom: 0px;
+	transform-origin: 1px -2px;
+
+	&--active {
+		transform: rotate(-45deg);
+	}
+}
