@@ -1,5 +1,6 @@
 :host {
 	display: block;
+	user-select: none;
 }
 
 .nav {
@@ -7,7 +8,7 @@
 
 	overflow: hidden;
 
-	@media (max-width: 375px) {
+	@media (max-width: 575px) {
 		display: flex;
 		flex-flow: column;
 
@@ -26,7 +27,7 @@
 		}
 	}
 
-	@media (min-width: 376px) {
+	@media (min-width: 576px) {
 		&__button {
 			display: none;
 		}
@@ -50,12 +51,12 @@
 		display: flex;
 		align-items: center;
 
-		@media (max-width: 768px) and (min-width: 376px) {
+		@media (max-width: 768px) and (min-width: 576px) {
 			padding-left: 48px;
 			gap: 37px;
 		}
 
-		@media (max-width: 375px) {
+		@media (max-width: 575px) {
 			flex-flow: column nowrap;
 			gap: 32px;
 			padding-left: 32px;

@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Events
+
+| Event       | Description | Type                |
+| ----------- | ----------- | ------------------- |
+| `clickLogo` |             | `CustomEvent<null>` |
+
+
 ## Dependencies
 
 ### Depends on

@@ -1,12 +1,27 @@
 :host {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+
 	display: block;
+
+	width: 100%;
 }
 
 .header {
 	display: flex;
 	align-items: center;
 
-	@media (max-width: 375px) {
+	ui-logo {
+		margin-right: 10px;
+	}
+
+	@media (max-width: 575px) {
+		ui-logo {
+			margin-top: 24px;
+			margin-left: 24px;
+		}
+
 		&__nav {
 			position: absolute;
 			right: 0;
@@ -15,7 +30,12 @@
 		}
 	}
 
-	@media (min-width: 376px) {
+	@media (min-width: 576px) {
+		ui-logo {
+			margin-top: 24px;
+			margin-left: 39px;
+		}
+
 		&__nav {
 			margin-left: auto;
 		}
@@ -36,6 +56,10 @@
 	}
 
 	@media (min-width: 1025px) {
+		ui-logo {
+			margin-top: 0px;
+		}
+
 		&::after {
 			content: '';
 			position: absolute;

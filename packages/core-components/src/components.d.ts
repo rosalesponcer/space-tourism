@@ -34,6 +34,10 @@ export interface UiHamburgerButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUiHamburgerButtonElement;
 }
+export interface UiHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLUiHeaderElement;
+}
 declare global {
     interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
     }
@@ -95,6 +99,7 @@ declare namespace LocalJSX {
         "onClickActive"?: (event: UiHamburgerButtonCustomEvent<boolean>) => void;
     }
     interface UiHeader {
+        "onClickLogo"?: (event: UiHeaderCustomEvent<null>) => void;
     }
     interface UiLogo {
     }
