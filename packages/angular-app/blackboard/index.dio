@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="RPy-i5b2ThRWYcu8mVJ7" name="ui-planet-slider">
-        <mxGraphModel dx="1098" dy="771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="915" dy="665" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -13,14 +13,14 @@
                 <mxCell id="7" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="155" y="320" width="320" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="ui-slider-nav-option" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+                <mxCell id="8" value="ui-nav-item" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="170" y="332.5" width="120" height="45" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="&lt;span&gt;ui-slider-nav-option&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+                <mxCell id="9" value="&lt;span&gt;ui-nav-item&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="300" y="332.5" width="120" height="45" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="ui-slider-nav" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="380" y="300" width="104" height="30" as="geometry"/>
+                <mxCell id="10" value="ui-planet" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="367" y="290" width="104" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="ui-text" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="155" y="410" width="320" height="40" as="geometry"/>
@@ -37,7 +37,7 @@
                 <mxCell id="16" value=".&lt;br&gt;.&lt;br&gt;." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="263" y="730" width="104" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="ui-planet-slider" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+                <mxCell id="17" value="ui-planet-slider" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="406" y="50" width="104" height="30" as="geometry"/>
                 </mxCell>
             </root>
