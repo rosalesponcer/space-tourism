@@ -1,5 +1,7 @@
 import { Component, h, Prop, State } from '@stencil/core';
 
+import { NAV_LIST } from './NavConfig';
+
 @Component({
 	tag: 'ui-nav',
 	styleUrl: 'ui-nav.scss',
@@ -10,24 +12,7 @@ export class UiNav {
 
 	@State() inactive: boolean = false;
 
-	navList = [
-		{
-			number: '00',
-			name: 'home',
-		},
-		{
-			number: '01',
-			name: 'destination',
-		},
-		{
-			number: '02',
-			name: 'crew',
-		},
-		{
-			number: '03',
-			name: 'technology',
-		},
-	];
+	@Prop() navList = NAV_LIST;
 
 	render() {
 		return (

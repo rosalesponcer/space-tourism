@@ -16,12 +16,29 @@ export namespace Components {
     }
     interface UiLogo {
     }
+    interface UiMainButton {
+    }
     interface UiNav {
         "last": string;
+        "navList": NavList[];
     }
     interface UiNavItem {
+        "center": boolean;
         "name": string;
+        "navActive": boolean;
         "navNumber": string;
+        "onlyBottom": boolean;
+    }
+    interface UiPlanet {
+        "planetKey": string;
+    }
+    interface UiPlanetSlider {
+    }
+    interface UiPlanetTab {
+        "currentKey": string;
+        "planetKeys": string[];
+    }
+    interface UiSeparator {
     }
     interface UiText {
         "color": 'white' | 'purple' | 'dark';
@@ -37,6 +54,10 @@ export interface UiHamburgerButtonCustomEvent<T> extends CustomEvent<T> {
 export interface UiHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUiHeaderElement;
+}
+export interface UiPlanetTabCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLUiPlanetTabElement;
 }
 declare global {
     interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
@@ -63,6 +84,12 @@ declare global {
         prototype: HTMLUiLogoElement;
         new (): HTMLUiLogoElement;
     };
+    interface HTMLUiMainButtonElement extends Components.UiMainButton, HTMLStencilElement {
+    }
+    var HTMLUiMainButtonElement: {
+        prototype: HTMLUiMainButtonElement;
+        new (): HTMLUiMainButtonElement;
+    };
     interface HTMLUiNavElement extends Components.UiNav, HTMLStencilElement {
     }
     var HTMLUiNavElement: {
@@ -75,6 +102,30 @@ declare global {
         prototype: HTMLUiNavItemElement;
         new (): HTMLUiNavItemElement;
     };
+    interface HTMLUiPlanetElement extends Components.UiPlanet, HTMLStencilElement {
+    }
+    var HTMLUiPlanetElement: {
+        prototype: HTMLUiPlanetElement;
+        new (): HTMLUiPlanetElement;
+    };
+    interface HTMLUiPlanetSliderElement extends Components.UiPlanetSlider, HTMLStencilElement {
+    }
+    var HTMLUiPlanetSliderElement: {
+        prototype: HTMLUiPlanetSliderElement;
+        new (): HTMLUiPlanetSliderElement;
+    };
+    interface HTMLUiPlanetTabElement extends Components.UiPlanetTab, HTMLStencilElement {
+    }
+    var HTMLUiPlanetTabElement: {
+        prototype: HTMLUiPlanetTabElement;
+        new (): HTMLUiPlanetTabElement;
+    };
+    interface HTMLUiSeparatorElement extends Components.UiSeparator, HTMLStencilElement {
+    }
+    var HTMLUiSeparatorElement: {
+        prototype: HTMLUiSeparatorElement;
+        new (): HTMLUiSeparatorElement;
+    };
     interface HTMLUiTextElement extends Components.UiText, HTMLStencilElement {
     }
     var HTMLUiTextElement: {
@@ -86,8 +137,13 @@ declare global {
         "ui-hamburger-button": HTMLUiHamburgerButtonElement;
         "ui-header": HTMLUiHeaderElement;
         "ui-logo": HTMLUiLogoElement;
+        "ui-main-button": HTMLUiMainButtonElement;
         "ui-nav": HTMLUiNavElement;
         "ui-nav-item": HTMLUiNavItemElement;
+        "ui-planet": HTMLUiPlanetElement;
+        "ui-planet-slider": HTMLUiPlanetSliderElement;
+        "ui-planet-tab": HTMLUiPlanetTabElement;
+        "ui-separator": HTMLUiSeparatorElement;
         "ui-text": HTMLUiTextElement;
     }
 }
@@ -103,12 +159,30 @@ declare namespace LocalJSX {
     }
     interface UiLogo {
     }
+    interface UiMainButton {
+    }
     interface UiNav {
         "last"?: string;
+        "navList"?: NavList[];
     }
     interface UiNavItem {
+        "center"?: boolean;
         "name"?: string;
+        "navActive"?: boolean;
         "navNumber"?: string;
+        "onlyBottom"?: boolean;
+    }
+    interface UiPlanet {
+        "planetKey": string;
+    }
+    interface UiPlanetSlider {
+    }
+    interface UiPlanetTab {
+        "currentKey"?: string;
+        "onClickTab"?: (event: UiPlanetTabCustomEvent<string>) => void;
+        "planetKeys"?: string[];
+    }
+    interface UiSeparator {
     }
     interface UiText {
         "color"?: 'white' | 'purple' | 'dark';
@@ -121,8 +195,13 @@ declare namespace LocalJSX {
         "ui-hamburger-button": UiHamburgerButton;
         "ui-header": UiHeader;
         "ui-logo": UiLogo;
+        "ui-main-button": UiMainButton;
         "ui-nav": UiNav;
         "ui-nav-item": UiNavItem;
+        "ui-planet": UiPlanet;
+        "ui-planet-slider": UiPlanetSlider;
+        "ui-planet-tab": UiPlanetTab;
+        "ui-separator": UiSeparator;
         "ui-text": UiText;
     }
 }
@@ -134,8 +213,13 @@ declare module "@stencil/core" {
             "ui-hamburger-button": LocalJSX.UiHamburgerButton & JSXBase.HTMLAttributes<HTMLUiHamburgerButtonElement>;
             "ui-header": LocalJSX.UiHeader & JSXBase.HTMLAttributes<HTMLUiHeaderElement>;
             "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
+            "ui-main-button": LocalJSX.UiMainButton & JSXBase.HTMLAttributes<HTMLUiMainButtonElement>;
             "ui-nav": LocalJSX.UiNav & JSXBase.HTMLAttributes<HTMLUiNavElement>;
             "ui-nav-item": LocalJSX.UiNavItem & JSXBase.HTMLAttributes<HTMLUiNavItemElement>;
+            "ui-planet": LocalJSX.UiPlanet & JSXBase.HTMLAttributes<HTMLUiPlanetElement>;
+            "ui-planet-slider": LocalJSX.UiPlanetSlider & JSXBase.HTMLAttributes<HTMLUiPlanetSliderElement>;
+            "ui-planet-tab": LocalJSX.UiPlanetTab & JSXBase.HTMLAttributes<HTMLUiPlanetTabElement>;
+            "ui-separator": LocalJSX.UiSeparator & JSXBase.HTMLAttributes<HTMLUiSeparatorElement>;
             "ui-text": LocalJSX.UiText & JSXBase.HTMLAttributes<HTMLUiTextElement>;
         }
     }

@@ -1,0 +1,21 @@
+:host {
+	display: block;
+}
+
+.separator {
+	margin-block: 32px;
+}
+
+.planet-slider {
+	&__tab {
+		margin-block: 26px 20px;
+	}
+
+	&__label {
+		margin-bottom: 12px;
+	}
+
+	&__value:not(:last-of-type) {
+		margin-bottom: 32px;
+	}
+}

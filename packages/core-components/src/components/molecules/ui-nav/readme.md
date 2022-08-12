@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `last`   | `last`    |             | `string` | `undefined` |
+| Property  | Attribute | Description | Type        | Default     |
+| --------- | --------- | ----------- | ----------- | ----------- |
+| `last`    | `last`    |             | `string`    | `undefined` |
+| `navList` | --        |             | `NavList[]` | `NAV_LIST`  |
 
 
 ## Dependencies

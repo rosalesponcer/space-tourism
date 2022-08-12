@@ -3,7 +3,7 @@
 }
 
 $sizes: (
-	'h1' 150px 150px 'ff1',
+	'h1' 150px 80px 'ff1',
 	'h2' 100px 100px 'ff1',
 	'h3' 56px 56px 'ff1',
 	'h4' 32px 32px 'ff1',
@@ -11,7 +11,7 @@ $sizes: (
 	'sh1' 28px 28px 'ff1',
 	'sh2' 14px 14px 'ff2' 3.45px,
 	'nav' 16px 14px 'ff2' 2.7px,
-	'p' 18px 18px 'ff2' 1.4px
+	'p' 18px 15px 'ff2' 1.4px 25px
 );
 
 $types: block, inline;
@@ -22,7 +22,7 @@ $colors: ('dark' --dark-blue-h, 'purple' --purple-light-h, 'white' --white-h);
 	color: var(--dark-blue-h);
 	overflow-wrap: anywhere;
 
-	@each $name, $size1, $size2, $font, $letter in $sizes {
+	@each $name, $size1, $size2, $font, $letter, $line in $sizes {
 		&--size-#{$name} {
 			@media (max-width: 768px) {
 				font-size: $size2;
@@ -42,6 +42,10 @@ $colors: ('dark' --dark-blue-h, 'purple' --purple-light-h, 'white' --white-h);
 
 			@if $letter {
 				letter-spacing: $letter;
+			}
+
+			@if $line{
+				line-height: $line;
 			}
 		}
 	}

@@ -12,7 +12,11 @@ import {
 export const config: Config = {
 	namespace: 'core-components',
 	taskQueue: 'async',
-	plugins: [sass()],
+	plugins: [
+		sass({
+			includePaths: ['/packages/core-components/src/assets/scss'],
+		}),
+	],
 	outputTargets: [
 		{
 			type: 'dist',

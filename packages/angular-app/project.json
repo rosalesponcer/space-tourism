@@ -21,7 +21,10 @@
 					"dist/packages/core-components/dist/core-components/core-components.css",
 					"node_modules/normalize.css/normalize.css"
 				],
-				"scripts": []
+				"scripts": [],
+				"stylePreprocessorOptions": {
+					"includePaths": ["packages/angular-app/src/assets/scss"]
+				}
 			},
 			"configurations": {
 				"production": {

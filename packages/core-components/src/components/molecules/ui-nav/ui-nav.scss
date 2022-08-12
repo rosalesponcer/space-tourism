@@ -1,6 +1,7 @@
 :host {
 	display: block;
 	user-select: none;
+	pointer-events: none;
 }
 
 .nav {
@@ -33,6 +34,10 @@
 		}
 	}
 
+	* {
+		pointer-events: all;
+	}
+
 	&__background {
 		position: absolute;
 		width: 100%;
@@ -53,6 +58,7 @@
 
 		@media (max-width: 768px) and (min-width: 576px) {
 			padding-left: 48px;
+			padding-right: 48px;
 			gap: 37px;
 		}
 
@@ -67,5 +73,11 @@
 			padding-right: 165px;
 			gap: 48px;
 		}
+	}
+}
+
+ui-nav-item {
+	@media (max-width: 575px) {
+		width: 100%;
 	}
 }

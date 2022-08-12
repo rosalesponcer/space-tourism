@@ -1,29 +1,48 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
 	tag: 'ui-nav-item',
 	styleUrl: 'ui-nav-item.scss',
-	shadow: true,
 })
 export class MoleculesUiNavItem {
 	@Prop() navNumber: string = '';
 	@Prop() name: string = '';
+	@Prop() center: boolean = false;
+	@Prop() onlyBottom: boolean = false;
+	@Prop() navActive: boolean = false;
+
+	hasNumber() {
+		if (!this.navNumber) return;
+
+		return (
+			<ui-text
+				size={'nav'}
+				weight={'bold'}
+				class={'nav-item__number'}
+				color={'white'}
+			>
+				{this.navNumber}
+			</ui-text>
+		);
+	}
 
 	render() {
 		return (
-			<div class={'nav-item'}>
-				<ui-text
-					size={'nav'}
-					weight={'bold'}
-					class={'nav-item__number'}
-					color={'white'}
+			<Host>
+				<div
+					class={{
+						'nav-item': true,
+						'nav-item--center': this.center,
+						'nav-item--bottom': this.onlyBottom,
+						'nav-item--active': this.navActive,
+					}}
 				>
-					{this.navNumber}
-				</ui-text>
-				<ui-text size={'nav'} color={'white'}>
-					{this.name.toUpperCase()}
-				</ui-text>
-			</div>
+					{this.hasNumber()}
+					<ui-text size={'nav'} color={'white'}>
+						{this.name.toUpperCase()}
+					</ui-text>
+				</div>
+			</Host>
 		);
 	}
 }
