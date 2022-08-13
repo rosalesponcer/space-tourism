@@ -1,24 +1,30 @@
 @import 'mixins';
 
 #destination-page {
-	padding-top: 100px;
-
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 
 	@include mobile() {
-		padding-inline: 24px;
+		padding: 100px 24px 0px;
 
 		background-image: url(/assets/destination/background-destination-mobile.jpg);
 
 		text-align: center;
 	}
 
-	@media (min-width: 576px) and (max-width: 768px) {
+	@include tablet() {
+		padding: 140px 97px 58px;
+
 		background-image: url(/assets/destination/background-destination-tablet.jpg);
+
+		ui-planet-slider {
+			text-align: center;
+		}
 	}
 
-	@media (min-width: 769px) {
+	@include desktop {
+		padding: 212px 163px 118px;
+
 		background-image: url(/assets/destination/background-destination-desktop.jpg);
 	}
 
@@ -30,20 +36,18 @@
 			flex-direction: column;
 			align-items: center;
 		}
-	}
 
-	.title {
-		&__number {
-			opacity: 0.25;
-		}
-
-		&__text {
-			margin-left: 28px;
+		@include desktop() {
+			&__column {
+				max-width: 1100px;
+				margin: auto;
+			}
 		}
 	}
+
+
 
 	.planet-img {
-
 		@include mobile() {
 			width: 170px;
 			height: 170px;

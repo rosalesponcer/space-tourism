@@ -1,2 +1,6 @@
-<ui-header class="header" (clickLogo)="onClickLogo()"></ui-header>
+<ui-header
+	class="header"
+	[currentRoute]="currentRoute"
+	(clickNavigate)="onClickLogo($event)"
+></ui-header>
 <router-outlet></router-outlet>

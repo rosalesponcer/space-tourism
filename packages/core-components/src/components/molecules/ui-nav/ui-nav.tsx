@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
 
 import { NAV_LIST } from './NavConfig';
 
@@ -9,10 +9,16 @@ import { NAV_LIST } from './NavConfig';
 })
 export class UiNav {
 	@Prop() last: string;
+	@Prop() navList = NAV_LIST;
+	@Prop() currentRoute: string;
+
+	@Event() clickNav: EventEmitter<string>;
 
 	@State() inactive: boolean = false;
 
-	@Prop() navList = NAV_LIST;
+	clickHandler(path: string) {
+		this.clickNav.emit(path);
+	}
 
 	render() {
 		return (
@@ -34,11 +40,13 @@ export class UiNav {
 						['nav__list--active']: !this.inactive,
 					}}
 				>
-					{this.navList.map(({ number, name }) => {
+					{this.navList.map(({ number, name, path }) => {
 						return (
 							<ui-nav-item
 								navNumber={number}
 								name={name}
+								navActive={this.currentRoute === path}
+								onClick={() => this.clickHandler(path)}
 							></ui-nav-item>
 						);
 					})}

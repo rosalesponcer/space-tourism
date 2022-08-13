@@ -34,13 +34,13 @@ export class UiPlanet {
 
 	render() {
 		const url = `/assets/destination/${PLANET_IMG.get(this.planetKey)}`;
-		const monnImg = getAssetPath(url);
+		const moon = getAssetPath(url);
 
 		return (
 			<div class="planet-img">
 				<img
-					src={monnImg}
-					alt="moon"
+					src={moon}
+					alt={`${this.planetKey} image`}
 					class="planet-img__img"
 					draggable={false}
 				/>

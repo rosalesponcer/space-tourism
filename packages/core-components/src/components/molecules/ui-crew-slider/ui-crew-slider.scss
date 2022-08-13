@@ -1,0 +1,13 @@
+:host {
+	display: block;
+}
+
+.crew-slider {
+	&__subtitle {
+		margin-bottom: 8px;
+	}
+
+	&__name {
+		margin-bottom: 16px;
+	}
+}

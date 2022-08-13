@@ -5,20 +5,25 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Person } from "packages/core-components/src/global/interfaces/Person";
 import { TextSize } from "packages/core-components/src/global/types/TextSize";
 export namespace Components {
     interface UiButton {
+    }
+    interface UiCrewSlider {
     }
     interface UiHamburgerButton {
         "first": string;
     }
     interface UiHeader {
+        "currentRoute": string;
     }
     interface UiLogo {
     }
     interface UiMainButton {
     }
     interface UiNav {
+        "currentRoute": string;
         "last": string;
         "navList": NavList[];
     }
@@ -28,6 +33,13 @@ export namespace Components {
         "navActive": boolean;
         "navNumber": string;
         "onlyBottom": boolean;
+    }
+    interface UiPerson {
+        "personImg": string;
+    }
+    interface UiPersonSlider {
+        "crewKeys": string[];
+        "currentPerson": Person;
     }
     interface UiPlanet {
         "planetKey": string;
@@ -55,6 +67,14 @@ export interface UiHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUiHeaderElement;
 }
+export interface UiNavCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLUiNavElement;
+}
+export interface UiPersonSliderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLUiPersonSliderElement;
+}
 export interface UiPlanetTabCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUiPlanetTabElement;
@@ -65,6 +85,12 @@ declare global {
     var HTMLUiButtonElement: {
         prototype: HTMLUiButtonElement;
         new (): HTMLUiButtonElement;
+    };
+    interface HTMLUiCrewSliderElement extends Components.UiCrewSlider, HTMLStencilElement {
+    }
+    var HTMLUiCrewSliderElement: {
+        prototype: HTMLUiCrewSliderElement;
+        new (): HTMLUiCrewSliderElement;
     };
     interface HTMLUiHamburgerButtonElement extends Components.UiHamburgerButton, HTMLStencilElement {
     }
@@ -102,6 +128,18 @@ declare global {
         prototype: HTMLUiNavItemElement;
         new (): HTMLUiNavItemElement;
     };
+    interface HTMLUiPersonElement extends Components.UiPerson, HTMLStencilElement {
+    }
+    var HTMLUiPersonElement: {
+        prototype: HTMLUiPersonElement;
+        new (): HTMLUiPersonElement;
+    };
+    interface HTMLUiPersonSliderElement extends Components.UiPersonSlider, HTMLStencilElement {
+    }
+    var HTMLUiPersonSliderElement: {
+        prototype: HTMLUiPersonSliderElement;
+        new (): HTMLUiPersonSliderElement;
+    };
     interface HTMLUiPlanetElement extends Components.UiPlanet, HTMLStencilElement {
     }
     var HTMLUiPlanetElement: {
@@ -134,12 +172,15 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "ui-button": HTMLUiButtonElement;
+        "ui-crew-slider": HTMLUiCrewSliderElement;
         "ui-hamburger-button": HTMLUiHamburgerButtonElement;
         "ui-header": HTMLUiHeaderElement;
         "ui-logo": HTMLUiLogoElement;
         "ui-main-button": HTMLUiMainButtonElement;
         "ui-nav": HTMLUiNavElement;
         "ui-nav-item": HTMLUiNavItemElement;
+        "ui-person": HTMLUiPersonElement;
+        "ui-person-slider": HTMLUiPersonSliderElement;
         "ui-planet": HTMLUiPlanetElement;
         "ui-planet-slider": HTMLUiPlanetSliderElement;
         "ui-planet-tab": HTMLUiPlanetTabElement;
@@ -150,20 +191,25 @@ declare global {
 declare namespace LocalJSX {
     interface UiButton {
     }
+    interface UiCrewSlider {
+    }
     interface UiHamburgerButton {
         "first"?: string;
         "onClickActive"?: (event: UiHamburgerButtonCustomEvent<boolean>) => void;
     }
     interface UiHeader {
-        "onClickLogo"?: (event: UiHeaderCustomEvent<null>) => void;
+        "currentRoute"?: string;
+        "onClickNavigate"?: (event: UiHeaderCustomEvent<string>) => void;
     }
     interface UiLogo {
     }
     interface UiMainButton {
     }
     interface UiNav {
+        "currentRoute"?: string;
         "last"?: string;
         "navList"?: NavList[];
+        "onClickNav"?: (event: UiNavCustomEvent<string>) => void;
     }
     interface UiNavItem {
         "center"?: boolean;
@@ -171,6 +217,14 @@ declare namespace LocalJSX {
         "navActive"?: boolean;
         "navNumber"?: string;
         "onlyBottom"?: boolean;
+    }
+    interface UiPerson {
+        "personImg"?: string;
+    }
+    interface UiPersonSlider {
+        "crewKeys"?: string[];
+        "currentPerson"?: Person;
+        "onChangePerson"?: (event: UiPersonSliderCustomEvent<string>) => void;
     }
     interface UiPlanet {
         "planetKey": string;
@@ -192,12 +246,15 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "ui-button": UiButton;
+        "ui-crew-slider": UiCrewSlider;
         "ui-hamburger-button": UiHamburgerButton;
         "ui-header": UiHeader;
         "ui-logo": UiLogo;
         "ui-main-button": UiMainButton;
         "ui-nav": UiNav;
         "ui-nav-item": UiNavItem;
+        "ui-person": UiPerson;
+        "ui-person-slider": UiPersonSlider;
         "ui-planet": UiPlanet;
         "ui-planet-slider": UiPlanetSlider;
         "ui-planet-tab": UiPlanetTab;
@@ -210,12 +267,15 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
+            "ui-crew-slider": LocalJSX.UiCrewSlider & JSXBase.HTMLAttributes<HTMLUiCrewSliderElement>;
             "ui-hamburger-button": LocalJSX.UiHamburgerButton & JSXBase.HTMLAttributes<HTMLUiHamburgerButtonElement>;
             "ui-header": LocalJSX.UiHeader & JSXBase.HTMLAttributes<HTMLUiHeaderElement>;
             "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
             "ui-main-button": LocalJSX.UiMainButton & JSXBase.HTMLAttributes<HTMLUiMainButtonElement>;
             "ui-nav": LocalJSX.UiNav & JSXBase.HTMLAttributes<HTMLUiNavElement>;
             "ui-nav-item": LocalJSX.UiNavItem & JSXBase.HTMLAttributes<HTMLUiNavItemElement>;
+            "ui-person": LocalJSX.UiPerson & JSXBase.HTMLAttributes<HTMLUiPersonElement>;
+            "ui-person-slider": LocalJSX.UiPersonSlider & JSXBase.HTMLAttributes<HTMLUiPersonSliderElement>;
             "ui-planet": LocalJSX.UiPlanet & JSXBase.HTMLAttributes<HTMLUiPlanetElement>;
             "ui-planet-slider": LocalJSX.UiPlanetSlider & JSXBase.HTMLAttributes<HTMLUiPlanetSliderElement>;
             "ui-planet-tab": LocalJSX.UiPlanetTab & JSXBase.HTMLAttributes<HTMLUiPlanetTabElement>;

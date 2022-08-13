@@ -5,11 +5,18 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property       | Attribute       | Description | Type     | Default     |
+| -------------- | --------------- | ----------- | -------- | ----------- |
+| `currentRoute` | `current-route` |             | `string` | `undefined` |
+
+
 ## Events
 
-| Event       | Description | Type                |
-| ----------- | ----------- | ------------------- |
-| `clickLogo` |             | `CustomEvent<null>` |
+| Event           | Description | Type                  |
+| --------------- | ----------- | --------------------- |
+| `clickNavigate` |             | `CustomEvent<string>` |
 
 
 ## Dependencies

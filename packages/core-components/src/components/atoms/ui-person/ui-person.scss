@@ -1,0 +1,32 @@
+@import '../../../assets/scss/mixins';
+
+:host {
+	display: block;
+}
+
+.person-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+
+	@include mobile() {
+		width: 177.12px;
+		height: 222px;
+	}
+
+	@include tablet() {
+		width: 456.37px;
+		height: 572px;
+	}
+
+	@include desktop() {
+		width: 568.07px;
+		height: 712px;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+	}
+}

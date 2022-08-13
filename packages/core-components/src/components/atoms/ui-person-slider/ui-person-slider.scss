@@ -1,0 +1,26 @@
+:host {
+	display: block;
+}
+
+.dots {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+
+	margin-block: 32px;
+
+	&__item {
+		width: 10px;
+		height: 10px;
+
+		background: var(--white-h);
+
+		border-radius: 50%;
+
+		transition: opacity ease-in-out 0.25s;
+
+		&:not(.dots__item--active) {
+			opacity: 0.17;
+		}
+	}
+}

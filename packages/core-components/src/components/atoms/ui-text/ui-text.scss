@@ -8,6 +8,8 @@ $sizes: (
 	'h3' 56px 56px 'ff1',
 	'h4' 32px 32px 'ff1',
 	'h5' 28px 28px 'ff2' 4.75px,
+	'cf' 56px 24px 'ff1',
+	'cf1' 32px 16px 'ff1',
 	'sh1' 28px 28px 'ff1',
 	'sh2' 14px 14px 'ff2' 3.45px,
 	'nav' 16px 14px 'ff2' 2.7px,
@@ -44,7 +46,7 @@ $colors: ('dark' --dark-blue-h, 'purple' --purple-light-h, 'white' --white-h);
 				letter-spacing: $letter;
 			}
 
-			@if $line{
+			@if $line {
 				line-height: $line;
 			}
 		}

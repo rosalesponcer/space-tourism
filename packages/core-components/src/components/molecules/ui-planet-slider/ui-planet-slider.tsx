@@ -29,60 +29,70 @@ export class UiPlanetSlider {
 	render() {
 		return (
 			<Host>
-				<ui-planet planetKey={this.currentPlanet.key}></ui-planet>
+				<div class="planet-slider">
+					<div class="planet-slider__column">
+						<ui-planet
+							planetKey={this.currentPlanet.key}
+						></ui-planet>
+					</div>
 
-				<ui-planet-tab
-					class="planet-slider__tab"
-					planetKeys={this.getKeys()}
-					currentKey={this.currentPlanet.key}
-					onClickTab={({ detail }) => this.clickTab(detail)}
-				></ui-planet-tab>
+					<div class="planet-slider__column">
+						<ui-planet-tab
+							class="planet-slider__tab"
+							planetKeys={this.getKeys()}
+							currentKey={this.currentPlanet.key}
+							onClickTab={({ detail }) => this.clickTab(detail)}
+						></ui-planet-tab>
 
-				<ui-text size="h3" color="white" type="block">
-					{this.currentPlanet.title.toUpperCase()}
-				</ui-text>
+						<ui-text size="h3" color="white" type="block">
+							{this.currentPlanet.title.toUpperCase()}
+						</ui-text>
 
-				<ui-text color="purple" type="block">
-					{this.currentPlanet.desc}
-				</ui-text>
+						<ui-text class="planet-slider__desc" color="purple" type="block">
+							{this.currentPlanet.desc}
+						</ui-text>
 
-				<ui-separator class="separator"></ui-separator>
+						<ui-separator class="separator"></ui-separator>
 
-				<ui-text
-					class="planet-slider__label"
-					color="purple"
-					type="block"
-					size="nav"
-				>
-					AVG. DISTANCE
-				</ui-text>
+						<div class="planet-slider__container">
+							<ui-text
+								class="planet-slider__label"
+								color="purple"
+								type="block"
+								size="nav"
+							>
+								AVG. DISTANCE
+							</ui-text>
 
-				<ui-text
-					class="planet-slider__value"
-					color="white"
-					size="sh1"
-					type="block"
-				>
-					{this.currentPlanet.distance.toUpperCase()}
-				</ui-text>
+							<ui-text
+								class="planet-slider__value"
+								color="white"
+								size="sh1"
+								type="block"
+							>
+								{this.currentPlanet.distance.toUpperCase()}
+							</ui-text>
 
-				<ui-text
-					class="planet-slider__label"
-					color="purple"
-					type="block"
-					size="nav"
-				>
-					EST. TRAVEL TIME
-				</ui-text>
+							<ui-text
+								class="planet-slider__label"
+								color="purple"
+								type="block"
+								size="nav"
+							>
+								EST. TRAVEL TIME
+							</ui-text>
 
-				<ui-text
-					class="planet-slider__value"
-					color="white"
-					size="sh1"
-					type="block"
-				>
-					{this.currentPlanet.travel.toUpperCase()}
-				</ui-text>
+							<ui-text
+								class="planet-slider__value"
+								color="white"
+								size="sh1"
+								type="block"
+							>
+								{this.currentPlanet.travel.toUpperCase()}
+							</ui-text>
+						</div>
+					</div>
+				</div>
 			</Host>
 		);
 	}

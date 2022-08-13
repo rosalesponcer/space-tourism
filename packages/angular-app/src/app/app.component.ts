@@ -23,5 +23,13 @@ export class AppComponent {
 			});
 	}
 
-	onClickLogo() {}
+	onClickLogo({ detail }: any) {
+		if (this.currentRoute === detail) return;
+
+		this.currentRoute = detail;
+
+		this.router.navigate([this.currentRoute]).catch((e) => {
+			console.log(e);
+		});
+	}
 }

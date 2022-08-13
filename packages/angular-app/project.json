@@ -17,7 +17,7 @@
 					"packages/angular-app/src/assets"
 				],
 				"styles": [
-					"packages/angular-app/src/styles.css",
+					"packages/angular-app/src/styles.scss",
 					"dist/packages/core-components/dist/core-components/core-components.css",
 					"node_modules/normalize.css/normalize.css"
 				],

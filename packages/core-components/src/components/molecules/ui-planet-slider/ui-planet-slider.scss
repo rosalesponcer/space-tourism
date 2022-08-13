@@ -1,3 +1,5 @@
+@import '../../../assets/scss/mixins';
+
 :host {
 	display: block;
 }
@@ -7,15 +9,57 @@
 }
 
 .planet-slider {
-	&__tab {
-		margin-block: 26px 20px;
+	@include mobile() {
+		&__label {
+			margin-bottom: 12px;
+		}
+
+		&__value {
+			&:not(:last-of-type) {
+				margin-bottom: 32px;
+			}
+		}
 	}
 
-	&__label {
-		margin-bottom: 12px;
+	@include tablet_desktop() {
+		&__value {
+			&:nth-child(2) {
+				grid-column-start: 1;
+				grid-row-start: 2;
+			}
+		}
+
+		&__container {
+			display: grid;
+			grid-template: 1fr 1fr / 1fr 1fr;
+			gap: 12px 0px;
+		}
 	}
 
-	&__value:not(:last-of-type) {
-		margin-bottom: 32px;
+	@include desktop() {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 157px;
+
+		margin-top: 64px;
+
+		&__tab {
+			margin-bottom: 37px;
+		}
+
+		&__desc {
+			margin-top: 14px;
+		}
+
+		&__column:last-child {
+			max-width: 370px;
+		}
+	}
+
+	@include mobile_tablet() {
+		&__tab {
+			margin-block: 26px 20px;
+		}
 	}
 }

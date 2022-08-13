@@ -7,10 +7,18 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type        | Default     |
-| --------- | --------- | ----------- | ----------- | ----------- |
-| `last`    | `last`    |             | `string`    | `undefined` |
-| `navList` | --        |             | `NavList[]` | `NAV_LIST`  |
+| Property       | Attribute       | Description | Type        | Default     |
+| -------------- | --------------- | ----------- | ----------- | ----------- |
+| `currentRoute` | `current-route` |             | `string`    | `undefined` |
+| `last`         | `last`          |             | `string`    | `undefined` |
+| `navList`      | --              |             | `NavList[]` | `NAV_LIST`  |
+
+
+## Events
+
+| Event      | Description | Type                  |
+| ---------- | ----------- | --------------------- |
+| `clickNav` |             | `CustomEvent<string>` |
 
 
 ## Dependencies

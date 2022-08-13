@@ -1,9 +1,20 @@
+@import '../../../assets/scss/mixins';
+
 :host {
 	display: block;
 }
 
 .planet-tab {
 	display: flex;
-	justify-content: center;
 	gap: 26px;
+}
+
+@include mobile_tablet() {
+	.planet-tab {
+		justify-content: center;
+	}
+}
+
+.nav-item {
+	padding-block: 15px;
 }

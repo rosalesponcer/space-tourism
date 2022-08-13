@@ -1,3 +1,5 @@
+@import '../../../assets/scss/mixins';
+
 :host {
 	display: block;
 	user-select: none;
@@ -8,17 +10,15 @@
 	align-items: center;
 	gap: 11px;
 
-	padding-block: 39px;
-
 	cursor: default;
 
-	@media (min-width: 576px) {
+	@include tablet_desktop() {
 		justify-content: center;
 
 		border-bottom: 3px solid transparent;
 	}
 
-	@media (max-width: 575px) {
+	@include mobile() {
 		// justify-content: flex-start;
 
 		&:not(.nav-item--bottom) {
@@ -32,10 +32,16 @@
 		}
 	}
 
-	@media (max-width: 768px) and (min-width: 576px) {
+	@include tablet() {
+		padding-block: 12px;
+
 		&__number {
 			display: none;
 		}
+	}
+
+	@include desktop() {
+		padding-block: 39px;
 	}
 
 	&:hover {
